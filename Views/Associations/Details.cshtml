@@ -1,0 +1,26 @@
+﻿@model school_itg_shadi.Models.Association
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<div class="flex-grow-1">
+    <div class="d-flex justify-content-xxl-center" style="background: linear-gradient(145deg, #ffffff, #dfe0e1) ;margin-left:60px ;margin-right:60px; padding:20px;  border-radius:30px;box-shadow:  14px 14px 28px #c4c5c6,
+             -14px -14px 28px #ffffff;  border-radius:30px !important">
+
+<div class="text-left" style="color:#09333f">
+    <h1 class="display-6">Info<b style="color:#ffca2c"> | @Html.DisplayFor(model => model.Client.UserName) </b><br />
+    <b class="align-text-top">Class:</b>  @Html.DisplayFor(model => model.Class.ClassName)  <br /> 
+    <b class="align-text-top">Teacher Full Name:</b> @Html.DisplayFor(model => model.Client.Name)  <br /> 
+    
+    </h1>
+    <form>
+        <input asp-action="Edit" asp-route-id="@Model?.Id" type="submit" value="Edit" class="btn btn-info" /> |
+        <input asp-action="Index" type="submit" value="Back" class="btn btn-warning" />
+    </form>
+</div>
+
+</div>
+</div>
+
+ 

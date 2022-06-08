@@ -1,0 +1,27 @@
+﻿@model school_itg_shadi.Models.Type
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<div class="flex">
+    <div class="container-sm">
+    <div class="d-flex justify-content-xxl-center" style="background: linear-gradient(145deg, #f3f3f3, #ffffff) ;padding:50px;  border-radius:30px;box-shadow:  14px 14px 28px #c4c5c6,
+             -14px -14px 28px #ffffff;  border-radius:30px !important">
+
+<div class="text-left" style="color:#09333f">
+    <h1 class="display-6">Type ID<b style="color:#ffca2c"> |   @Html.DisplayFor(model => model.TypeId) </b><br />
+    <b class="align-text-top">Description:</b>    @Html.DisplayFor(model => model.TypeDesc)  <br /> 
+    </h1>
+    <div>
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="TypeId" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <input asp-action="Index" type="submit" value="Back" class="btn btn-warning" />
+    </form>
+    </div>
+
+</div>
+
+</div>
+</div>
+</div>

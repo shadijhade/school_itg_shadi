@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Admin Gate";
+}
+
+
+<div class="flex">
+    <div class="container-sm">
+    <div class="d-flex justify-content-xxl-center" style="background: linear-gradient(145deg, #f3f3f3, #ffffff) ;padding:50px;  border-radius:30px;box-shadow:  14px 14px 28px #c4c5c6,
+             -14px -14px 28px #ffffff;  border-radius:30px !important">
+
+<div class="text-left" style="color:#09333f">
+    <h1 class="display-6">Hello Admin<b style="color:#ffca2c"> | </b><br />
+    <b class="align-text-top">Shadi</b><br /> 
+    </h1>
+
+
+  <div class="container px-4 py-5" id="hanging-icons">
+    
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div>
+         <h2> Students Marks </h2>
+          <p>manage create read delete update and view the students and student marks data from this area </p>
+         
+          <a type="button" class="col btn btn-warning btn-lg" asp-area="" asp-controller="StudentMarks" asp-action="Index">students Section</a>		
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h2> All Clients </h2>
+          <p>manage create read delete view the client data from this area </p>
+          <a type="button" class="btn btn-warning btn-lg" asp-area="" asp-controller="Clients" asp-action="Index">Clients Section</a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+          <h2> Associations </h2>
+          <p>manage create read delete view the Associations data from this area </p>
+          <a type="button"  class="btn btn-info btn-lg" asp-area="" asp-controller="Associations" asp-action="Index">Associations Section</a>
+        </div>
+      </div>
+    </div>
+  </div>
+ <div class="container px-4 py-5" id="hanging-icons">
+    <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
+      <div class="col d-flex align-items-start">
+        <div>
+          <h2> Classes </h2>
+          <p>manage create read delete view the Classes data from this area </p>
+          <a type="button"  class="btn btn-info btn-lg" asp-area="" asp-controller="Classes" asp-action="Index">Classes Section</a>
+        </div>
+      </div>
+      <div class="col d-flex align-items-start">
+        <div>
+         <h2> Types </h2>
+          <p>manage create read delete update and view the type data from this area </p>
+          <a type="button"  class="btn btn-info btn-lg" asp-area="" asp-controller="Types" asp-action="Index">Type Section</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</div>
+</div>
+</div>

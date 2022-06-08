@@ -1,0 +1,29 @@
+﻿@model school_itg_shadi.Models.Client
+
+@{
+    ViewData["Title"] = "Client Details";
+}
+<div class="flex-grow-1">
+    <div class="d-flex justify-content-xxl-center" style="background: linear-gradient(145deg, #ffffff, #dfe0e1) ;margin-left:60px ;margin-right:60px; padding:20px;  border-radius:30px;box-shadow:  14px 14px 28px #c4c5c6,
+             -14px -14px 28px #ffffff;  border-radius:30px !important">
+
+<div class="text-left" style="color:#09333f">
+    <h1 class="display-6">Client ID<b style="color:#ffca2c"> | @Html.DisplayFor(model => model.UserId) </b><br />
+    <b class="align-text-top">Name :</b>  @Html.DisplayFor(model => model.Name)  <br /> 
+    <b class="align-text-top">User Name:</b> @Html.DisplayFor(model => model.UserName)  <br /> 
+    <b class="align-text-top">DateOfBirth :</b>  @Html.DisplayFor(model => model.DateOfBirth)  <br /> 
+    <b class="align-text-top">Gender :  </b>@Html.DisplayFor(model => model.Gender.GenderDesc)  <br /> 
+   <b class="align-text-top"> Type : </b> @Html.DisplayFor(model => model.Type.TypeDesc)  <br /> 
+   <b class="align-text-top"> User Id :</b>  @Html.DisplayFor(model => model.UserId)  <br /> 
+    
+    
+    </h1>
+    <div>
+    <a asp-action="Edit" asp-route-id="@Model?.UserId">Edit</a><b> |</b>
+    <a asp-action="Index">Back to all clients list</a>
+</div>
+
+</div>
+
+</div>
+</div>

@@ -1,0 +1,103 @@
+﻿@model IEnumerable<school_itg_shadi.Models.StudentMark>
+
+@{
+    ViewData["Title"] = "Students Marks";
+}
+
+
+<div class="container-fluid">
+
+<div class="flex-grow-1">
+      <form asp-controller="StudentMarks" asp-action="Index" class="flex-xxl-row ">
+    <div class="row align-items-center g-3">
+        <div class="col-auto">
+            <label class="visually-hidden" for="inputEmail">Student Name</label>
+            <input type="text" name="SearchString" class="form-control" id="inputSearch" placeholder="Student Name">
+        </div>
+        <div class="col-auto">
+            <button type="submit" value="Filter" class="btn btn-warning ">Search</button>
+        </div>
+    </div>
+     </form>
+
+     <button type="button" class="flex-row btn btn-info btn-lg" style="box-shadow:  14px 14px 28px #c4c5c6,
+             -14px -14px 28px #ffffff; margin-top:15px "><a style="text-decoration: none;color:#fcfcfc" asp-action="Create" >ADD NEW</a></button>
+    <div class="d-flex justify-content-xxl-center" style="background: linear-gradient(145deg, #ffffff, #dfe0e1) ;margin-top:30px ;margin-left:60px ;margin-right:60px; padding:0px;  border-radius:30px;box-shadow:  14px 14px 28px #c4c5c6,
+             -14px -14px 28px #ffffff;  border-radius:30px !important">
+ <div class="container-sm">
+<div class="table-responsive">
+<table class="table table-striped table-hover table-borderless ">
+    <thead>
+        <tr>
+			<th scope="col">
+                Number
+            </th>
+            <th scope="col">
+                Name
+            </th>
+            <th scope="col">
+                Gender
+            </th>
+             <th scope="col">
+                Physics
+            </th>
+			<th scope="col">
+                Chemistry
+            </th>
+			<th scope="col">
+                English
+            </th>
+			<th scope="col">
+                Math
+            </th>
+			<th scope="col">
+                History
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+			<td scope="row">
+                @Html.DisplayFor(modelItem => item.StudentNameNavigation.UserId)
+            </td>
+            <td scope="row">
+                @Html.DisplayFor(modelItem => item.Student.Name)
+            </td>
+			<td scope="row">
+                @Html.DisplayFor(modelItem => item.StudentNameNavigation.GenderId)
+            </td>
+			<td scope="row">
+                @Html.DisplayFor(modelItem => item.Physics)
+            </td>
+			<td scope="row">
+                @Html.DisplayFor(modelItem => item.Chemistry)
+            </td>
+			<td scope="row">
+                @Html.DisplayFor(modelItem => item.English)
+            </td>
+			<td scope="row">
+                @Html.DisplayFor(modelItem => item.Math)
+            </td>
+			<td scope="row">
+                @Html.DisplayFor(modelItem => item.History)
+            </td>
+			
+          
+            <td scope="row">
+               
+                | <button type="button" class="btn btn-outline-info"><a style="text-decoration: none;color:#09333f" asp-action="Edit" asp-route-id="@item.Id">Edit</a></button>
+				| <button type="button" class="btn btn-outline-primary"><a style="text-decoration: none;color:#09333f" asp-action="Details" asp-route-id="@item.Id">Details</a></button>
+				| <button type="button" class="btn btn-outline-danger"><a style="text-decoration: none;color:#09333f" asp-action="Delete" asp-route-id="@item.Id">Delete</a></button>
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div> 

@@ -1,0 +1,64 @@
+﻿@model IEnumerable<school_itg_shadi.Models.StudentMark>
+
+@{
+    ViewData["Title"] = "List";
+}
+	
+<section class="p-5 my-4">
+<div class="text-left" style="color:#09333f">
+    <h1 class="display-6"><i class="fa-solid fa-graduation-cap" style="color:#38b6ff"></i>itg school marks 2022<b style="color:#ffca2c"> |  Search Student</b></h1>
+    <br />
+</div>
+</section>
+<div class="container">
+
+
+<form asp-controller="StudentMarks" asp-action="List">
+    <div class="row align-items-center g-3">
+        <div class="col-auto">
+            <label class="visually-hidden" for="inputEmail">Student Name</label>
+            <input type="text" name="SearchString" class="form-control" id="inputSearch" placeholder="Student Name">
+        </div>
+        <div class="col-auto">
+            <button type="submit" value="Filter" class="btn btn-warning ">Search</button>
+        </div>
+    </div>
+</form>
+
+<div class="table-responsive">
+<table class="table table-striped table-hover table-borderless ">
+    <thead style="font-size:1.50rem">
+        <tr>
+			<th scope="col">
+                Number
+            </th>
+            <th scope="col">
+                Name
+            </th>
+            <th scope="col">
+                View Marks
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody  style="font-size:1.35rem">
+@foreach (var item in Model) {
+        <tr>
+			<td scope="row">
+                @Html.DisplayFor(modelItem => item.StudentNameNavigation.UserId)
+            </td>
+            <td scope="row">
+                @Html.DisplayFor(modelItem => item.Student.Name)
+            </td>
+          
+            <td scope="row">
+               
+                | <button type="button" class="btn btn-outline-info btn-lg"><a style="text-decoration: none;color:#09333f" asp-action="List_Details" asp-route-id="@item.Id">Marks</a></button>
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+</div>

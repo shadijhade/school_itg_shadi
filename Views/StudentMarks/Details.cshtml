@@ -1,0 +1,28 @@
+﻿@model school_itg_shadi.Models.StudentMark
+
+@{
+    ViewData["Title"] = "Details";
+}
+<div class="flex-grow-1">
+    <div class="d-flex justify-content-xxl-center" style="background: linear-gradient(145deg, #ffffff, #dfe0e1) ;margin-left:60px ;margin-right:60px; padding:20px;  border-radius:30px;box-shadow:  14px 14px 28px #c4c5c6,
+             -14px -14px 28px #ffffff;  border-radius:30px !important">
+
+<div class="text-left" style="color:#09333f">
+    <h1 class="display-6"><i class="fa-solid fa-graduation-cap" style="color:#38b6ff"></i> Student ID<b style="color:#ffca2c"> | @Html.DisplayFor(model => model.StudentNameNavigation.UserId) </b><br />
+    <b class="align-text-top">Name :</b>  @Html.DisplayFor(model => model.Student.Name)  <br /> 
+    <b class="align-text-top"> Physics:</b>  @Html.DisplayFor(model => model.Physics)  <br /> 
+   <b class="align-text-top">  Math :</b>  @Html.DisplayFor(model => model.Math)  <br /> 
+    <b class="align-text-top"> English : </b> @Html.DisplayFor(model => model.English)  <br /> 
+   <b class="align-text-top">  Chemistry : </b> @Html.DisplayFor(model => model.Chemistry)  <br /> 
+   <b class="align-text-top">  History : </b> @Html.DisplayFor(model => model.History)  <br /> 
+    
+    
+    </h1>
+</div>
+
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
+</div>
+</div>

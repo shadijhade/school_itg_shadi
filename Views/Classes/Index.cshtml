@@ -1,0 +1,53 @@
+﻿@model IEnumerable<school_itg_shadi.Models.Class>
+
+@{
+    ViewData["Title"] = "Classes";
+}
+
+
+<div class="container-sm">
+    
+
+<div class="flex-grow-1">
+    <h3 class="text-center col" style="color:#333">All classes</h3>
+    <div class="d-flex justify-content-xxl-center" style="background: linear-gradient(145deg, #ffffff, #dfe0e1) ;margin-top:30px ;margin-left:60px ;margin-right:60px; padding:0px;  border-radius:30px;box-shadow:  14px 14px 28px #c4c5c6,
+             -14px -14px 28px #ffffff;  border-radius:30px !important">
+    
+<div class="table" style="font-size:1.5rem">
+    
+<table class="table table-striped table-hover table-borderless ">
+    <thead class="text-center" style="color:#09333f ;">
+        <tr>
+            <th>
+                Class
+            </th>
+            <th>
+                Manage
+            </th>
+        </tr>
+    </thead>
+    <tbody class="text-center" style="color:#09333f ;">
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClassName)
+            </td>
+            <td style="color:#9b9b9c">
+                
+                <a asp-action="Delete" asp-route-id="@item.ClassId" style="color:#c1382f; text-decoration:none">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>
+
+</div>
+<div>
+    <button type="button" class="col btn btn-warning btn-lg" style="box-shadow:  14px 14px 28px #c4c5c6,
+             -14px -14px 28px #ffffff; "><a style="text-decoration: none;color:#fcfcfc" asp-action="Create" >Add New Class</a></button>
+</div>
+
+</div>
+
+</div>

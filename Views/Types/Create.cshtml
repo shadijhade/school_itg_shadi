@@ -1,0 +1,43 @@
+﻿@model school_itg_shadi.Models.Type
+
+@{
+    ViewData["Title"] = "Create Type";
+}
+<div class="flex">
+    <div class="container-sm">
+    <div class="d-flex justify-content-center" style="background: linear-gradient(145deg, #ffffff, #dfe0e1) ;margin-left:60px ;margin-right:60px; padding:20px;  border-radius:30px;box-shadow:  14px 14px 28px #c4c5c6,
+             -14px -14px 28px #ffffff;  border-radius:30px !important">
+    
+<div class="d-flex row">
+    <div class="row-xl text-center" style="font-size:1.65rem">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+             <div class="form-group">
+                <label asp-for="TypeId" class="control-label"></label>
+                <input asp-for="TypeId" class="form-control" />
+                <span asp-validation-for="TypeId" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="TypeDesc" class="control-label"></label>
+                <input asp-for="TypeDesc" class="form-control" />
+                <span asp-validation-for="TypeDesc" class="text-danger"></span>
+            </div>
+            <div class="form-group row" style="margin-top:25px ; padding:20px">
+                <input type="submit" value="Create" class="btn btn-info btn-lg" style="color:#ffffff"/>
+            </div>
+           
+        </form>
+    </div>
+</div>
+</div>
+</div>
+</div>
+<div class="row text-center" style="margin-top:20px" >
+    <a asp-action="Index" style="text-decoration:none;color:#26a5bf;font-size:1.5rem">Back to List</a>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

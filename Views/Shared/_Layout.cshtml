@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - schoool</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/schoool.styles.css" asp-append-version="true" />
+	<script src="https://kit.fontawesome.com/88f3ff7b70.js" crossorigin="anonymous"></script>
+	
+</head>
+<body>
+	
+    <header>
+         
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top " style="border-radius:0px 0px 30px 30px; background: linear-gradient(145deg, #fcfcfc, #dfe0e1) !important;box-shadow:  14px 14px 28px #c4c5c6,
+             -14px -14px 28px #ffffff; " >
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/login-img.png" alt="logo" width="60" height="60"></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><b style="color:#fca126">Home</b></a>
+                        </li>
+						<li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="StudentMarks" asp-action="List"><b style="color:#136f8b">Marks</b></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy"><b style="color:#37b3fa">about us</b></a>
+                        </li>
+						
+                    </ul>
+                    <partial name="_LoginPartial" />
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid" style="margin-top:160px">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    
+    <footer class="bg-light text-center text-lg-start fixed-bottom" style="margin-bottom:0">
+  <!-- Copyright -->
+  <div class="text-center p-3" style="color:#09333f; background-color:#f8f9fa;border-radius:30px">
+			© 2022 Copyright: ITG School
+    <b style="color:#fca126">| @ViewData["Title"]</b>
+  </div>
+  <!-- Copyright -->
+</footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

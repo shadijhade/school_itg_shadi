@@ -1,0 +1,43 @@
+﻿@model school_itg_shadi.Models.Association
+
+@{
+    ViewData["Title"] = "Edit Associate";
+}
+
+<div class="flex">
+    
+    <div class="d-flex justify-content-center" style="background: linear-gradient(145deg, #ffffff, #dfe0e1) ;margin-left:60px ;margin-right:60px; padding:20px;  border-radius:30px;box-shadow:  14px 14px 28px #c4c5c6,
+             -14px -14px 28px #ffffff;  border-radius:30px !important">
+    
+<div class="row">
+    <div class="row-xl text-center" style="font-size:1.65rem">
+        <form asp-action="Edit" >
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ClientId" class="control-label" style="padding:20px">Teacher Full Name</label>
+                <select asp-for="ClientId" class="form-control" asp-items="ViewBag.ClientId"></select>
+                <span asp-validation-for="ClientId" class="text-danger"></span>
+            </div>
+            <div class="form-group" style="">
+                <label asp-for="ClassId" class="control-label" style="padding:20px"> Class Id</label>
+                <select asp-for="ClassId" class="form-control" asp-items="ViewBag.ClassId"></select>
+                <span asp-validation-for="ClassId" class="text-danger"></span>
+            </div>
+            <div class="form-group row" style="margin-top:25px ; padding:20px">
+                <input type="submit" value="Save" class="btn btn-info" style="color:#ffffff"/>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+</div>
+
+
+<div class="row text-center" style="margin-top:20px" >
+    <a asp-action="Index" style="text-decoration:none;color:#26a5bf;font-size:1.5rem">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
